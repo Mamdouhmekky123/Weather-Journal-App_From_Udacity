@@ -1,6 +1,7 @@
+// High performance
 setTimeout(() => {
     document.querySelector("body").style.opacity = '1';
-}, 300);
+}, 400);
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -62,7 +63,7 @@ generate_Weather_Data.addEventListener('click', (event) => {
                     Current_Date: newDate,
                     Current_Temprature: data.main.temp,
                     User_Feelings_output: Feelings.value
-                }).then(UpdateUIData());
+                }).then(retrieveData());
             })
     }
 }
@@ -109,7 +110,7 @@ const postData = async (url = '', data = {}) => {
 };
 
 //Update UI Data
-const UpdateUIData = async () => {
+const retrieveData = async () => {
     const request = await fetch("/all");
     try {
         const retrieved_data = await request.json();
