@@ -47,10 +47,10 @@ generate_Weather_Data.addEventListener('click', (event) => {
     const completed_URL = `${base_URL}${zip.value}${my_key}`; // example --> https://api.openweathermap.org/data/2.5/weather?zip=43221&appid=ae0ac77b13796f6f24f4fd60a665f912&units=imperial
     console.log(completed_URL);
     console.log("https://api.openweathermap.org/data/2.5/weather?zip=43221&appid=ae0ac77b13796f6f24f4fd60a665f912&units=imperial");
-    if (!zip) {
+    if (!zip.value) {
         alert("Please Enter the zip code ");
     }
-    else if (!Feelings) {
+    else if (!Feelings.value) {
         alert("Please Enter Your feelings ");
     }
     else {
