@@ -4,9 +4,10 @@ setTimeout(() => {
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let original_month = d.getMonth() + 1;
+let newDate = original_month + '.' + d.getDate() + '.' + d.getFullYear();
 // we can use also ---->  const newDate = d.toDateString(); ---> to reptesent the date
-
+console.log(newDate);
 
 const zip = document.querySelector("#zip"); // related to input of type (text) that the user should type the zip code in it
 const Feelings = document.querySelector("#Feelings");// related to  textarea that the user should type his\her feelings in it
@@ -112,9 +113,10 @@ const UpdateUIData = async () => {
     const request = await fetch("/all");
     try {
         const retrieved_data = await request.json();
-        document.getElementById("Current_Temprature").innerHTML = "The Tempreture ---> ( " + Math.round(retrieved_data.Current_Temprature) + ") F";
-        document.getElementById("Current_Date").innerHTML = "The Date ---> ( " + retrieved_data.newDate + " )";
-        document.getElementById("User_Feelings_output").innerHTML = "Today you feel  ---> ( " + retrieved_data.User_Feelings_output + " )";
+        document.getElementById("Current_Temprature").innerHTML = "The Tempreture : ( " + Math.round(retrieved_data.Current_Temprature) + ") F";
+        document.getElementById("Current_Date").innerHTML = "The Date :( " + retrieved_data.Current_Date + " )";
+        document.getElementById("User_Feelings_output").innerHTML = "Today I feel  :( " + retrieved_data.User_Feelings_output + " )";
+        console.log(newDate);
     }
     catch (e) {
         console.log("error", e);

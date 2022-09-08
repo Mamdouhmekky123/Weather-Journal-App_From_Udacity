@@ -6,22 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Journal</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="inputs">
-        <label for="Zip">The Zip Coe </label>
-        <input type="text" id="zip" name="zip_code" placeholder="Enter zip code"><br>
-        <labe for="Feelings"> Your Feelings</label><br>
-            <textarea type="text" id="Feelings" cols="50" rows="10" placeholder="Type here"></textarea><br>
-            <input id="generate_Weather_Data" type="button" value="Show the Weather"><br>
+    <div id="app">
+        <div class="holder headline">
+            Weather Journal App
+        </div>
+
+        <div class="inputs_zip">
+            <label for="Zip">The Zip Coe </label>
+            <input type="text" id="zip" name="zip_code" placeholder="Enter zip code"><br>
+        </div>
+        <div class="inputs_feelings">
+            <labe for="Feelings"> Your Feelings</label><br>
+                <textarea type="text" id="Feelings" cols="40" rows="2" placeholder="Type here"></textarea><br>
+        </div>
+        <div class="holder button">
+            <button id="generate_Weather_Data" type="submit"> Show the Weather </button>
+        </div>
+        <br>
+        <div class="entries">
+            <div class="title">Most Recent Entry</div>
+            <div class="outpts">
+                <p id="Current_Date"></p>
+                <p id="Current_Temprature"></p>
+                <p id="User_Feelings_output"></p>
+            </div>
+        </div>
     </div>
-    <br>
-    <div class="outputs">
-        <p id="Current_Date"></p>
-        <p id="Current_Temprature"></p>
-        <p id="User_Feelings_output"></p>
     </div>
 </body>
 <script src="app.js"></script>

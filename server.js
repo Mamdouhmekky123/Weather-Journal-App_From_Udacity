@@ -36,7 +36,7 @@ app.use(cors());
 app.post('/add', async (req, res) => {
     const info = {
         Current_Temprature: req.body.Current_Temprature,
-        Current_Date: req.body.newDate,
+        Current_Date: req.body.Current_Date,
         User_Feelings_output: req.body.User_Feelings_output
     };
 
